@@ -1,0 +1,163 @@
+.viewport {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-primary);
+}
+
+.themeDark {
+  background: #0a0a0f;
+}
+
+.themeLight {
+  background: #f8f9fa;
+}
+
+.themeCustom {
+  background: #0a0a0f;
+}
+
+.themeNeon {
+  background: #000000;
+}
+
+.asciiContainer {
+  position: relative;
+  overflow: auto;
+  max-width: 100%;
+  max-height: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.asciiContainer::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.asciiContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.asciiContainer::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+.asciiPre {
+  font-family: var(--font-mono);
+  white-space: pre;
+  letter-spacing: 0.05em;
+  color: var(--text-ascii);
+  margin: 0;
+  padding: 16px;
+  user-select: text;
+  transition: font-size 0.15s, line-height 0.15s;
+}
+
+.themeDark .asciiPre {
+  color: #e0e0e0;
+}
+
+.themeLight .asciiPre {
+  color: #1a1a2e;
+}
+
+.themeCustom .asciiPre {
+  color: var(--ascii-color);
+}
+
+.themeNeon .asciiPre {
+  color: #00ff41;
+}
+
+.asciiCanvas {
+  display: block;
+  padding: 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Empty state */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 40px;
+  animation: fadeIn 0.6s ease;
+}
+
+.emptyIcon {
+  font-size: 4rem;
+  opacity: 0.3;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.emptyTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: -0.02em;
+}
+
+.emptySubtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  max-width: 360px;
+  line-height: 1.6;
+}
+
+.emptyHint {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.hintChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.hintChip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--bg-hover);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.05); }
+}
+
+@media (max-width: 768px) {
+  .emptySubtitle {
+    max-width: 280px;
+  }
+}

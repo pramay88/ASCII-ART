@@ -1,0 +1,108 @@
+.toolbar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 50;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background: var(--bg-panel);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.exportButtons {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.toolButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 12px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 0.65rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.toolButton:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--bg-hover);
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
+.toolButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.toolButton.recording {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.toolButtonLabel {
+  font-weight: 600;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 768px) {
+  .toolbar {
+    top: 8px;
+    right: 8px;
+    padding: 6px 8px;
+  }
+
+  .toolButton {
+    padding: 6px 10px;
+    font-size: 0.6rem;
+  }
+
+  .exportButtons {
+    gap: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .toolbar {
+    top: 6px;
+    right: 6px;
+    padding: 4px 6px;
+  }
+
+  .toolButton {
+    padding: 4px 8px;
+    font-size: 0.55rem;
+  }
+
+  .exportButtons {
+    gap: 3px;
+  }
+}

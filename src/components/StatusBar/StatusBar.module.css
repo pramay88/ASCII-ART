@@ -1,0 +1,93 @@
+.statusBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 20px;
+  background: var(--bg-panel);
+  border-top: 1px solid var(--border);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  z-index: 5;
+  min-height: 32px;
+}
+
+.statusLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.statusRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.statusItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.statusLabel {
+  color: var(--text-muted);
+}
+
+.statusValue {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.sourceBadge {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sourceNone {
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+}
+
+.sourceActive {
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+.recordingDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff4444;
+  animation: recordPulse 1s ease-in-out infinite;
+}
+
+@keyframes recordPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.recordingText {
+  color: #ff4444;
+  font-weight: 600;
+}
+
+.fullscreenButton {
+  border: 1px solid var(--border);
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border-radius: 6px;
+  padding: 3px 8px;
+  font-size: 0.68rem;
+  cursor: pointer;
+}
+
+.fullscreenButton:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--bg-hover);
+}
